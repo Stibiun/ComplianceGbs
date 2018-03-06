@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" ptype="MONOLITH" ppkg="com.gbs.compliance.susep" epkg="model" v="4.7" rws="_15203082151122" Pws="_15203082151122" cws="_15203082151122" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_15203082151111" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity compositePrimaryKeyClass="SusepEventPK" abs="false" class="SusepEvent" v="true" jbn="false" xre="false" m="false" rootElement="_15203082151111" id="_1520308311603">
+        <jpa:ath>Stibiun</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="name" id="_15203083567635">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="creationDate" id="_15203083670096">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="description" id="_15203084827297">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="url" id="_15203085218348">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="status" id="_15203085271989">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:many-to-one optional="true" primaryKey="false" connected-entity-id="_1520309463685" v="true" xvt="" name="susepEventStatus" id="_152030998336631">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id" id="_15203083116373">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="SusepEvent.findAll">
+            <jpa:query>Select e from SusepEvent e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="SusepEvent.findByName">
+            <jpa:query>Select e from SusepEvent e where e.name=:name</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="SusepEvent.findByCreationDate">
+            <jpa:query>Select e from SusepEvent e where e.creationDate=:creationDate</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="SusepEvent.findByDescription">
+            <jpa:query>Select e from SusepEvent e where e.description=:description</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="SusepEvent.findByUrl">
+            <jpa:query>Select s from SusepEvent s where s.url=:url</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="SusepEvent.findByStatus">
+            <jpa:query>Select s from SusepEvent s where s.status=:status</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="SusepEvent.findByAttribute">
+            <jpa:query>Select s from SusepEvent s where s.attribute=:attribute</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="UserPK" abs="false" class="User" v="true" jbn="false" xre="false" m="false" rootElement="_15203082151111" id="_1520308575849">
+        <jpa:ath>Stibiun</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="login" id="_152030877845917">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="name" id="_152030875445715">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="email" id="_152030876064516">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="status" id="_152030899017120">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id" id="_152030857585011">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="User.findAll">
+            <jpa:query>Select e from User e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="User.findByName">
+            <jpa:query>Select u from User u where u.name=:name</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="User.findByEmail">
+            <jpa:query>Select u from User u where u.email=:email</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="User.findByLogin">
+            <jpa:query>Select u from User u where u.login=:login</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="User.findByStatus">
+            <jpa:query>Select u from User u where u.status=:status</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="ComplianceEventPK" abs="false" class="ComplianceEvent" v="true" jbn="false" xre="false" m="false" rootElement="_15203082151111" id="_1520308583544">
+        <jpa:ath>Stibiun</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="eventType" id="_152030896838918">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="status" id="_152030897920219">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:many-to-one optional="true" primaryKey="false" connected-entity-id="_1520308311603" v="true" xvt="" name="susepEvent" id="_152031002185032">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:many-to-one>
+            <jpa:many-to-one optional="true" primaryKey="false" connected-entity-id="_1520308575849" v="true" xvt="" name="user" id="_152031003978033">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id" id="_152030858354513">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="ComplianceEvent.findAll">
+            <jpa:query>Select e from ComplianceEvent e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="ComplianceEvent.findByEventType">
+            <jpa:query>Select c from ComplianceEvent c where c.eventType=:eventType</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="ComplianceEvent.findByStatus">
+            <jpa:query>Select c from ComplianceEvent c where c.status=:status</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="SusepEventStatusPK" abs="false" class="SusepEventStatus" v="true" jbn="false" xre="false" m="false" rootElement="_15203082151111" id="_1520309463685">
+        <jpa:ath>Stibiun</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="enumName" id="_152030947791925">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="uiName" id="_152030948128426">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="description" id="_152030948339427">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id" id="_152030946368523">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="SusepEventStatus.findAll">
+            <jpa:query>Select e from SusepEventStatus e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="SusepEventStatus.findByEnumName">
+            <jpa:query>Select s from SusepEventStatus s where s.enumName=:enumName</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="SusepEventStatus.findByUiName">
+            <jpa:query>Select s from SusepEventStatus s where s.uiName=:uiName</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="SusepEventStatus.findByDescription">
+            <jpa:query>Select s from SusepEventStatus s where s.description=:description</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:snp loc="BEFORE_PACKAGE" e="true">/**
+ * This file was generated by the Jeddict
+ */</jpa:snp>
+    <jpa:wsl>
+        <jpa:ws n="Main" id="_15203082151122">
+            <i ref="_1520308311603" x="118" y="85"/>
+            <i ref="_1520309463685" x="363" y="72"/>
+            <i ref="_1520308575849" x="667" y="343"/>
+            <i ref="_1520308583544" x="365" y="386"/>
+        </jpa:ws>
+    </jpa:wsl>
+</jpa:entity-mappings>
