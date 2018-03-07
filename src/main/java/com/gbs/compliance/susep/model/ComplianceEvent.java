@@ -9,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.ws.rs.FormParam;
 
 /**
  * @author Stibiun
@@ -19,14 +18,13 @@ public class ComplianceEvent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @FormParam("id")
     private Long id;
     @Basic
-    @FormParam("eventType")
     private String eventType;
     @Basic
-    @FormParam("status")
-    private String status;
+    private String complianceStatus;
+    @Basic
+    private String description;
     @ManyToOne(targetEntity = SusepEvent.class)
     private SusepEvent susepEvent;
     @ManyToOne(targetEntity = User.class)
@@ -48,12 +46,20 @@ public class ComplianceEvent {
         this.eventType = eventType;
     }
 
-    public String getStatus() {
-        return this.status;
+    public String getComplianceStatus() {
+        return this.complianceStatus;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setComplianceStatus(String complianceStatus) {
+        this.complianceStatus = complianceStatus;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public SusepEvent getSusepEvent() {

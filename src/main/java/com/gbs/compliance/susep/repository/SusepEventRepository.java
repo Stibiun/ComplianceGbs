@@ -1,11 +1,9 @@
 package com.gbs.compliance.susep.repository;
 
-import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.inject.Inject;
 import com.gbs.compliance.susep.model.SusepEvent;
 
-@Named("susepEvent")
 public class SusepEventRepository extends AbstractRepository<SusepEvent, Long> {
 
     @Inject

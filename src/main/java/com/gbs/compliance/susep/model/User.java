@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.ws.rs.FormParam;
 
 /**
  * @author Stibiun
@@ -18,20 +17,15 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @FormParam("id")
     private Long id;
     @Basic
-    @FormParam("login")
     private String login;
     @Basic
-    @FormParam("name")
     private String name;
     @Basic
-    @FormParam("email")
     private String email;
     @Basic
-    @FormParam("status")
-    private String status;
+    private String userStatus;
 
     public Long getId() {
         return this.id;
@@ -65,11 +59,11 @@ public class User {
         this.email = email;
     }
 
-    public String getStatus() {
-        return this.status;
+    public String getUserStatus() {
+        return this.userStatus;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setUserStatus(String userStatus) {
+        this.userStatus = userStatus;
     }
 }

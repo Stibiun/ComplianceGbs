@@ -3,13 +3,14 @@
  */
 package com.gbs.compliance.susep.model;
 
+import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.ws.rs.FormParam;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * @author Stibiun
@@ -19,25 +20,18 @@ public class SusepEvent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @FormParam("id")
     private Long id;
     @Basic
-    @FormParam("name")
     private String name;
     @Basic
-    @FormParam("creationDate")
-    private String creationDate;
+    @Temporal(TemporalType.DATE)
+    private Date creationDate;
     @Basic
-    @FormParam("description")
     private String description;
     @Basic
-    @FormParam("url")
     private String url;
     @Basic
-    @FormParam("status")
-    private String status;
-    @ManyToOne(targetEntity = SusepEventStatus.class)
-    private SusepEventStatus susepEventStatus;
+    private String eventStatus;
 
     public Long getId() {
         return this.id;
@@ -55,11 +49,11 @@ public class SusepEvent {
         this.name = name;
     }
 
-    public String getCreationDate() {
+    public Date getCreationDate() {
         return this.creationDate;
     }
 
-    public void setCreationDate(String creationDate) {
+    public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
     }
 
@@ -79,19 +73,11 @@ public class SusepEvent {
         this.url = url;
     }
 
-    public String getStatus() {
-        return this.status;
+    public String getEventStatus() {
+        return this.eventStatus;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public SusepEventStatus getSusepEventStatus() {
-        return this.susepEventStatus;
-    }
-
-    public void setSusepEventStatus(SusepEventStatus susepEventStatus) {
-        this.susepEventStatus = susepEventStatus;
+    public void setEventStatus(String eventStatus) {
+        this.eventStatus = eventStatus;
     }
 }

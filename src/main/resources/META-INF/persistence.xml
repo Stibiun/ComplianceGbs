@@ -3,7 +3,6 @@
   <persistence-unit name="DEFAULT_PU" transaction-type="JTA">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>com.gbs.compliance.susep.model.ComplianceEvent</class>
-    <class>com.gbs.compliance.susep.model.SusepEventStatus</class>
     <class>com.gbs.compliance.susep.model.SusepEvent</class>
     <class>com.gbs.compliance.susep.model.User</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
