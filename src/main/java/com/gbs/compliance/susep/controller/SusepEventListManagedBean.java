@@ -6,17 +6,18 @@ import com.gbs.compliance.susep.repository.SusepEventRepository;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
-import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.inject.Inject;
 
 @ManagedBean
 @SessionScoped
 public class SusepEventListManagedBean {
     
-    @EJB
+    @Inject
     private SusepEventRepository susepEventRepository;
-    List<SusepEvent> susepEventList;
+    private List<SusepEvent> susepEventList;
+    private SusepEvent selectedItem;
     
     public SusepEventListManagedBean(){
         susepEventList = new ArrayList<>(0);
@@ -33,6 +34,18 @@ public class SusepEventListManagedBean {
 
     public void setSusepEventList(List<SusepEvent> susepEventList) {
         this.susepEventList = susepEventList;
+    }
+
+    public SusepEvent getSelectedItem() {
+        return selectedItem;
+    }
+
+    public void setSelectedItem(SusepEvent selectedItem) {
+        this.selectedItem = selectedItem;
+    }
+    
+    public void noOp(){
+        
     }
     
 }
